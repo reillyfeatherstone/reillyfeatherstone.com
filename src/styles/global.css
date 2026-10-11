@@ -1,1 +1,55 @@
 @import "tailwindcss";
+
+@theme {
+  --color-fg-dark: #e4e1e1;
+  --color-dark: rgb(27, 27, 27);
+}
+
+body {
+  font-family: "Montserrat", sans-serif;
+  color: #e4e1e1;
+  background-color: rgb(27, 27, 27);
+  max-width: 1320px;
+  margin: 0 auto;
+}
+
+.logo {
+  font-family: "Montserrat", sans-serif;
+}
+
+main {
+  width: 100%;
+  max-width: 800px;
+  margin: 60px auto;
+  padding: 0 20px;
+  box-sizing: border-box;
+}
+
+h2 {
+  font-size: 1.5rem;
+  margin-bottom: 20px;
+}
+
+p {
+  font-size: 1rem;
+  line-height: 1.5;
+  margin-bottom: 20px;
+}
+
+header {
+  text-transform: uppercase;
+}
+
+nav {
+  font-size: 0.85rem;
+  font-weight: 500;
+}
+
+nav li a:hover,
+nav li a[aria-current="page"] {
+  text-decoration: underline;
+  text-underline-offset: 2px;
+  text-shadow:
+    0.1px 0 currentColor,
+    -0.1px 0 currentColor;
+}
