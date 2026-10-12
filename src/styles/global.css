@@ -1,28 +1,50 @@
 @import "tailwindcss";
 
-@theme {
-  --color-fg-dark: #e4e1e1;
-  --color-dark: rgb(27, 27, 27);
+@theme inline {
+  --font-primary: Montserrat, sans-serif;
+  --color-primary: var(--color-bg);
+  --color-secondary: var(--color-fg);
+  --color-accent: var(--color-accent);
+}
+
+:root {
+  color-scheme: light dark;
+
+  --color-bg: #f0eeee;
+  --color-fg: #141312;
+  --color-accent: #46688a;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --color-bg: #141312;
+    --color-fg: #f0eeee;
+    --color-accent: #7d9bb5;
+  }
 }
 
 body {
-  font-family: "Montserrat", sans-serif;
-  color: #e4e1e1;
-  background-color: rgb(27, 27, 27);
-  max-width: 1320px;
+  font-family: var(--font-primary);
+  color: var(--color-secondary);
+  background-color: var(--color-primary);
+  max-width: 1280px;
   margin: 0 auto;
-}
-
-.logo {
-  font-family: "Montserrat", sans-serif;
 }
 
 main {
   width: 100%;
-  max-width: 800px;
-  margin: 60px auto;
-  padding: 0 20px;
+  max-width: 1080px;
+  padding: 0 40px;
   box-sizing: border-box;
+}
+/* 
+.logo {
+  color: var(--color-accent);
+} */
+
+h1 {
+  font-size: 1.75rem;
+  margin-bottom: 20px;
 }
 
 h2 {
@@ -48,8 +70,20 @@ nav {
 nav li a:hover,
 nav li a[aria-current="page"] {
   text-decoration: underline;
-  text-underline-offset: 2px;
+  text-underline-offset: 4px;
+  text-decoration-color: var(--color-accent);
+  text-decoration-thickness: 1px;
   text-shadow:
     0.1px 0 currentColor,
     -0.1px 0 currentColor;
+}
+
+.bio p span {
+  color: var(--color-accent);
+  font-weight: 600;
+}
+
+.bio h1 span {
+  color: var(--color-accent);
+  font-weight: 700;
 }
