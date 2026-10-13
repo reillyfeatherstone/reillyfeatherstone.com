@@ -1,4 +1,5 @@
 @import "tailwindcss";
+@plugin "@tailwindcss/typography";
 
 @theme inline {
   --font-primary: Montserrat, sans-serif;
@@ -23,67 +24,65 @@
   }
 }
 
-body {
-  font-family: var(--font-primary);
-  color: var(--color-secondary);
-  background-color: var(--color-primary);
-  max-width: 1280px;
-  margin: 0 auto;
-}
+@layer base {
+  body {
+    font-family: var(--font-primary);
+    color: var(--color-secondary);
+    background-color: var(--color-primary);
+    max-width: 1280px;
+    margin: 0 auto;
+  }
 
-main {
-  width: 100%;
-  max-width: 1080px;
-  padding: 0 40px;
-  box-sizing: border-box;
-}
-/* 
-.logo {
-  color: var(--color-accent);
-} */
+  main {
+    width: 100%;
+    max-width: 1080px;
+    padding: 0 20px;
+    box-sizing: border-box;
+  }
 
-h1 {
-  font-size: 1.75rem;
-  margin-bottom: 20px;
-}
+  h1 {
+    font-size: 1.75rem;
+    margin-bottom: 20px;
+  }
 
-h2 {
-  font-size: 1.5rem;
-  margin-bottom: 20px;
-}
+  h2 {
+    font-size: 1.5rem;
+    margin-bottom: 20px;
+  }
 
-p {
-  font-size: 1rem;
-  line-height: 1.5;
-  margin-bottom: 20px;
-}
+  p {
+    font-size: 1rem;
+    line-height: 1.5;
+    margin-bottom: 20px;
+  }
 
-header {
-  text-transform: uppercase;
-}
+  header {
+    text-transform: uppercase;
+  }
 
-nav {
-  font-size: 0.85rem;
-  font-weight: 500;
-}
+  nav {
+    font-size: 0.85rem;
+    font-weight: 500;
+  }
 
-nav li a:hover,
-nav li a[aria-current="page"] {
-  text-decoration: underline;
-  text-underline-offset: 4px;
-  text-decoration-color: var(--color-accent);
-  text-decoration-thickness: 1px;
-  text-shadow:
-    0.1px 0 currentColor,
-    -0.1px 0 currentColor;
-}
+  nav li a:hover,
+  nav li a[aria-current="page"] {
+    text-decoration: underline;
+    text-underline-offset: 4px;
+    text-decoration-color: var(--color-accent);
+    text-decoration-thickness: 1px;
+    text-shadow:
+      0.1px 0 currentColor,
+      -0.1px 0 currentColor;
+  }
 
-.bio p span {
-  color: var(--color-accent);
-  font-weight: 600;
-}
+  .bio p span {
+    color: var(--color-accent);
+    font-weight: 600;
+  }
 
-.bio h1 span {
-  color: var(--color-accent);
-  font-weight: 700;
+  .bio h1 span {
+    color: var(--color-accent);
+    font-weight: 700;
+  }
 }

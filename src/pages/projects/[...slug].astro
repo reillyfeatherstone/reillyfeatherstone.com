@@ -1,0 +1,189 @@
+---
+import ProjectMeta from "@components/ProjectMeta.astro"
+import BaseLayout from "@layouts/BaseLayout.astro"
+import { Picture } from "astro:assets"
+import { getCollection } from "astro:content"
+import Prose from "@components/Prose.astro"
+
+export async function getStaticPaths() {
+  const projects = await getCollection("projects")
+
+  return projects.map((project) => ({
+    params: { slug: project.id },
+    props: { project },
+  }))
+}
+
+const { project } = Astro.props
+
+const metadata = [
+  { label: "Date", value: project.data.date },
+  { label: "Format", value: project.data.format },
+  { label: "Directors", value: project.data.directors },
+  { label: "Writers", value: project.data.writers },
+  { label: "Production Companies", value: project.data.prodCompanies },
+  { label: "Venues", value: project.data.venues },
+  { label: "Cast", value: project.data.cast },
+  { label: "Partners", value: project.data.partners },
+]
+
+import { render } from "astro:content"
+import ProjectLinks from "@components/ProjectLinks.astro"
+const { Content } = await render(project)
+const rows = [
+  ["md:col-span-7", "md:col-span-5"],
+  ["md:col-span-5", "md:col-span-7"],
+]
+
+const spans = rows.flat()
+---
+
+<BaseLayout>
+  <div class="w-full aspect-585/300 md:aspect-1280/533 overflow-hidden">
+    <Picture
+      class="block w-full h-full object-cover"
+      src={project.data.banner}
+      alt={project.data.title}
+      quality={"high"}
+      formats={["avif", "webp", "jpg"]}
+      fallbackFormat="jpg"
+      loading="eager"
+      inferSize
+      fit="cover"
+    />
+  </div>
+  <!-- <a href="/projects" class="block pt-3 text-sm">{"<"} Projects</a> -->
+  <h1 class="text-5xl uppercase font-bold pt-5 md:text-6xl lg:text-7xl">
+    {project.data.title}
+  </h1>
+
+  <div class="grid md:grid-cols-[3fr_4fr] lg:grid-cols-[3fr_4fr] gap-10 pb-15">
+    <ProjectMeta metadata={metadata} />
+    <div class="pt-3 md:pt-0">
+      <h3 class="text-xl font-bold pb-2 uppercase">Synopsis</h3>
+      <Prose><Content /></Prose>
+      <ProjectLinks links={project.data.links} />
+    </div>
+  </div>
+
+  <div class="grid grid-cols-1 md:grid-cols-12 gap-x-6 gap-y-8 items-start">
+    {
+      project.data.gallery.map((image, i) => (
+        <figure class={spans[i % spans.length]}>
+          <button
+            type="button"
+            class="block w-full cursor-zoom-in"
+            data-lightbox-trigger
+            data-src={image.url}
+            data-alt={image.alt}
+            aria-label={`View larger: ${image.alt}`}
+          >
+            <Picture
+              class="block w-full h-auto rounded-md"
+              src={image.url}
+              alt={image.alt}
+              quality="high"
+              formats={["avif", "webp", "jpg"]}
+              fallbackFormat="jpg"
+              loading={i < 3 ? "eager" : "lazy"}
+              inferSize
+            />
+          </button>
+        </figure>
+      ))
+    }
+  </div>
+
+  <dialog
+    id="lightbox"
+    class="m-0 h-full max-h-none w-full max-w-none bg-transparent p-0 backdrop:bg-black/90"
+  >
+    <div
+      class="flex h-full w-full items-center justify-center p-4 md:p-10"
+      data-lightbox-bg
+    >
+      <img
+        id="lightbox-img"
+        src=""
+        alt=""
+        class="max-h-full max-w-full rounded-md object-contain"
+      />
+    </div>
+
+    <button
+      type="button"
+      data-lightbox-close
+      aria-label="Close"
+      class="absolute right-4 top-4 rounded-full bg-black/50 px-3 py-1 text-2xl text-white hover:bg-black/80"
+    >
+      ×
+    </button>
+    <button
+      type="button"
+      data-lightbox-prev
+      aria-label="Previous image"
+      class="absolute left-4 top-1/2 -translate-y-1/2 rounded-full bg-black/50 px-3 py-1 text-3xl text-white hover:bg-black/80"
+    >
+      ‹
+    </button>
+    <button
+      type="button"
+      data-lightbox-next
+      aria-label="Next image"
+      class="absolute right-4 top-1/2 -translate-y-1/2 rounded-full bg-black/50 px-3 py-1 text-3xl text-white hover:bg-black/80"
+    >
+      ›
+    </button>
+  </dialog>
+
+  <script>
+    const dialog = document.querySelector<HTMLDialogElement>("#lightbox")!
+    const img = dialog.querySelector<HTMLImageElement>("#lightbox-img")!
+    const triggers = Array.from(
+      document.querySelectorAll<HTMLButtonElement>("[data-lightbox-trigger]"),
+    )
+    let current = 0
+
+    function show(index: number) {
+      current = (index + triggers.length) % triggers.length // wraps around
+      const trigger = triggers[current]
+      img.src = trigger.dataset.src ?? ""
+      img.alt = trigger.dataset.alt ?? ""
+    }
+
+    triggers.forEach((trigger, i) => {
+      trigger.addEventListener("click", () => {
+        show(i)
+        dialog.showModal()
+        document.body.style.overflow = "hidden"
+      })
+    })
+
+    dialog.addEventListener("close", () => {
+      document.body.style.overflow = ""
+    })
+
+    // Click on the dark area (not the image or buttons) closes it
+    dialog.addEventListener("click", (e) => {
+      const target = e.target as HTMLElement
+      if (target === dialog || target.hasAttribute("data-lightbox-bg")) {
+        dialog.close()
+      }
+    })
+
+    dialog
+      .querySelector("[data-lightbox-close]")!
+      .addEventListener("click", () => dialog.close())
+    dialog
+      .querySelector("[data-lightbox-prev]")!
+      .addEventListener("click", () => show(current - 1))
+    dialog
+      .querySelector("[data-lightbox-next]")!
+      .addEventListener("click", () => show(current + 1))
+
+    dialog.addEventListener("keydown", (e) => {
+      if (e.key === "ArrowLeft") show(current - 1)
+      if (e.key === "ArrowRight") show(current + 1)
+    })
+  </script>
+</BaseLayout>

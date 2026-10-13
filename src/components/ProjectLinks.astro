@@ -1,0 +1,22 @@
+---
+interface LinkItem {
+  label: string
+  url: string
+}
+
+interface Props {
+  links: LinkItem[]
+}
+
+const { links } = Astro.props
+---
+
+<div class="links flex pt-5 gap-5">
+  {
+    links.map(({ label, url }) => (
+      <a class="text-[#FFD800] font-bold" href={url} target="_blank">
+        {label}
+      </a>
+    ))
+  }
+</div>

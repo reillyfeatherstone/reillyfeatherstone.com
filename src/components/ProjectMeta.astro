@@ -1,0 +1,29 @@
+---
+interface MetadataItem {
+  label: string
+  value?: string | number | readonly (string | number)[] | null
+}
+
+interface Props {
+  metadata: MetadataItem[]
+}
+
+const { metadata } = Astro.props
+---
+
+<dl class="pt-6">
+  {
+    metadata.map(({ label, value }) => {
+      const displayValue = Array.isArray(value) ? value.join(", ") : value
+
+      return displayValue ? (
+        <div class="flex items-baseline justify-between gap-6 border-b border-secondary/10 py-3.5 last:border-b-0">
+          <dt class="shrink-0 text-secondary/85">{label}</dt>
+          <dd class="max-w-[75%] text-right font-medium text-secondary">
+            {displayValue}
+          </dd>
+        </div>
+      ) : null
+    })
+  }
+</dl>

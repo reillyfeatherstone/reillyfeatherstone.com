@@ -7,7 +7,7 @@
       "@styles/*": ["./src/styles/*"],
       "@layouts/*": ["./src/layouts/*"],
       "@components/*": ["./src/components/*"],
-      "@content/*": ["./src/content/*"]
+      "@projects/*": ["./src/content/projects/*"]
     }
   }
 }
