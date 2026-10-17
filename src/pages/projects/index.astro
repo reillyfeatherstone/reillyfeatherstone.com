@@ -8,7 +8,11 @@ const projects = await getCollection("projects")
 
 <BaseLayout>
   <h1 class="text-3xl font-bold">Projects</h1>
-  <div>
-    {projects.map((project) => <ProjectCard project={project} />)}
+  <div class="grid sm:grid-cols-2 md:grid-cols-3 gap-8">
+    {
+      projects.map((project, i) => (
+        <ProjectCard project={project} priority={i < 3} />
+      ))
+    }
   </div>
 </BaseLayout>

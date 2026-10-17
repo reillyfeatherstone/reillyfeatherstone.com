@@ -1,0 +1,45 @@
+---
+import { Picture } from "astro:assets"
+import type { CollectionEntry } from "astro:content"
+
+interface Props {
+  project: CollectionEntry<"projects">
+  priority?: boolean
+}
+
+const { project, priority = false } = Astro.props
+const { banner, title, date, format } = project.data
+---
+
+<a
+  href={`/projects/${project.id}`}
+  class="project-card group flex flex-col gap-2"
+>
+  <Picture
+    src={banner}
+    alt={title}
+    width={1200}
+    height={675}
+    widths={[400, 600, 800, 1200]}
+    sizes="(min-width: 768px) 33vw, 100vw"
+    formats={["avif", "webp", "jpg"]}
+    fallbackFormat="jpg"
+    quality="high"
+    priority={priority}
+    class="block w-full aspect-video object-cover rounded-md border border-gray-600 shadow-2xl/5 shadow-secondary"
+  />
+
+  <div>
+    <div class="flex items-baseline justify-between gap-2">
+      <h3 class="font-medium text-lg">{title}</h3>
+      <p class="text-secondary/60 text-sm shrink-0">{date}</p>
+    </div>
+    <p class="text-sm">{format}</p>
+  </div>
+</a>
+
+<!-- <div class="project-card">
+  <a href={`projects/${project.id}`} class="project-title">
+    {project.data.title}
+  </a>
+</div> -->

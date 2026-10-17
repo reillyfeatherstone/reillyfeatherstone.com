@@ -70,120 +70,24 @@ const spans = rows.flat()
     {
       project.data.gallery.map((image, i) => (
         <figure class={spans[i % spans.length]}>
-          <button
-            type="button"
-            class="block w-full cursor-zoom-in"
-            data-lightbox-trigger
-            data-src={image.url}
-            data-alt={image.alt}
-            aria-label={`View larger: ${image.alt}`}
-          >
-            <Picture
-              class="block w-full h-auto rounded-md"
-              src={image.url}
-              alt={image.alt}
-              quality="high"
-              formats={["avif", "webp", "jpg"]}
-              fallbackFormat="jpg"
-              loading={i < 3 ? "eager" : "lazy"}
-              inferSize
-            />
-          </button>
+          <Picture
+            class="block w-full h-auto rounded-md"
+            src={image.url}
+            alt={image.alt}
+            quality="high"
+            formats={["avif", "webp", "jpg"]}
+            fallbackFormat="jpg"
+            loading={"lazy"}
+            inferSize
+          />
+          {(image.title || image.label) && (
+            <figcaption class="flex justify-between gap-4 pt-2 px-1 text-xs">
+              <span class="text-secondary/90">{image.title}</span>
+              <span class="text-secondary/50">{image.label}</span>
+            </figcaption>
+          )}
         </figure>
       ))
     }
   </div>
-
-  <dialog
-    id="lightbox"
-    class="m-0 h-full max-h-none w-full max-w-none bg-transparent p-0 backdrop:bg-black/90"
-  >
-    <div
-      class="flex h-full w-full items-center justify-center p-4 md:p-10"
-      data-lightbox-bg
-    >
-      <img
-        id="lightbox-img"
-        src=""
-        alt=""
-        class="max-h-full max-w-full rounded-md object-contain"
-      />
-    </div>
-
-    <button
-      type="button"
-      data-lightbox-close
-      aria-label="Close"
-      class="absolute right-4 top-4 rounded-full bg-black/50 px-3 py-1 text-2xl text-white hover:bg-black/80"
-    >
-      ×
-    </button>
-    <button
-      type="button"
-      data-lightbox-prev
-      aria-label="Previous image"
-      class="absolute left-4 top-1/2 -translate-y-1/2 rounded-full bg-black/50 px-3 py-1 text-3xl text-white hover:bg-black/80"
-    >
-      ‹
-    </button>
-    <button
-      type="button"
-      data-lightbox-next
-      aria-label="Next image"
-      class="absolute right-4 top-1/2 -translate-y-1/2 rounded-full bg-black/50 px-3 py-1 text-3xl text-white hover:bg-black/80"
-    >
-      ›
-    </button>
-  </dialog>
-
-  <script>
-    const dialog = document.querySelector<HTMLDialogElement>("#lightbox")!
-    const img = dialog.querySelector<HTMLImageElement>("#lightbox-img")!
-    const triggers = Array.from(
-      document.querySelectorAll<HTMLButtonElement>("[data-lightbox-trigger]"),
-    )
-    let current = 0
-
-    function show(index: number) {
-      current = (index + triggers.length) % triggers.length // wraps around
-      const trigger = triggers[current]
-      img.src = trigger.dataset.src ?? ""
-      img.alt = trigger.dataset.alt ?? ""
-    }
-
-    triggers.forEach((trigger, i) => {
-      trigger.addEventListener("click", () => {
-        show(i)
-        dialog.showModal()
-        document.body.style.overflow = "hidden"
-      })
-    })
-
-    dialog.addEventListener("close", () => {
-      document.body.style.overflow = ""
-    })
-
-    // Click on the dark area (not the image or buttons) closes it
-    dialog.addEventListener("click", (e) => {
-      const target = e.target as HTMLElement
-      if (target === dialog || target.hasAttribute("data-lightbox-bg")) {
-        dialog.close()
-      }
-    })
-
-    dialog
-      .querySelector("[data-lightbox-close]")!
-      .addEventListener("click", () => dialog.close())
-    dialog
-      .querySelector("[data-lightbox-prev]")!
-      .addEventListener("click", () => show(current - 1))
-    dialog
-      .querySelector("[data-lightbox-next]")!
-      .addEventListener("click", () => show(current + 1))
-
-    dialog.addEventListener("keydown", (e) => {
-      if (e.key === "ArrowLeft") show(current - 1)
-      if (e.key === "ArrowRight") show(current + 1)
-    })
-  </script>
 </BaseLayout>
