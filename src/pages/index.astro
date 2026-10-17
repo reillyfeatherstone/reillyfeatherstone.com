@@ -1,6 +1,7 @@
 ---
 import { Picture } from "astro:assets"
 import BaseLayout from "@layouts/BaseLayout.astro"
+import ProjectGrid from "@components/ProjectGrid.astro"
 const headshot =
   "https://static.reillyfeatherstone.com/Reilly%20Featherstone%20Headshot.jpg"
 ---
@@ -66,5 +67,9 @@ const headshot =
         </div>
       </div>
     </div>
+  </div>
+
+  <div class="pt-30">
+    <ProjectGrid maxGrid={2} limit={3} />
   </div>
 </BaseLayout>

@@ -1,0 +1,95 @@
+---
+import ProjectCard from "@components/ProjectCard.astro"
+import { getProjects } from "@utils/projects"
+
+interface Props {
+  limit?: number
+  maxGrid?: 1 | 2 | 3
+  filterable?: boolean
+}
+
+const { limit = Infinity, maxGrid = 3, filterable = false } = Astro.props
+
+const projects = await getProjects()
+
+const grids = {
+  1: "grid-cols-1",
+  2: "md:grid-cols-2",
+  3: "md:grid-cols-2 lg:grid-cols-3",
+} as const
+
+const selectedProjects = projects.slice(0, limit)
+const hasMore = projects.length > selectedProjects.length
+const emptySlots = (maxGrid - (limit % maxGrid)) % maxGrid
+const showViewMore = hasMore && emptySlots > 0
+
+const formats = [...new Set(projects.map((p) => p.data.format))]
+---
+
+<div data-project-grid>
+  <div class="flex justify-between">
+    <h1 class="text-3xl font-bold">Projects</h1>
+    {
+      filterable && (
+        <div
+          class="mb-6 flex flex-wrap gap-2"
+          role="group"
+          aria-label="Filter by format"
+        >
+          {["All", ...formats].map((format) => (
+            <button
+              type="button"
+              data-filter={format}
+              aria-pressed={format === "All"}
+              class="rounded-full border border-secondary/40 px-3 text-xs font-medium text-secondary transition-colors hover:border-secondary/60 aria-pressed:border-secondary aria-pressed:bg-secondary aria-pressed:text-primary hover:cursor-pointer"
+            >
+              {format}
+            </button>
+          ))}
+        </div>
+      )
+    }
+  </div>
+  <div class:list={["grid gap-8", grids[maxGrid]]}>
+    {
+      selectedProjects.slice(0, limit).map((project, i) => (
+        <div data-format={project.data.format}>
+          <ProjectCard project={project} priority={i < 6} />
+        </div>
+      ))
+    }
+    {
+      showViewMore && (
+        <a
+          href="/projects"
+          class="self-start border border-gray-600/50 aspect-video flex items-center justify-center rounded-md bg-card text-gray-100 dark:text-gray-100 font-semibold hover:bg-card-accent transition-colors"
+        >
+          View More
+        </a>
+      )
+    }
+  </div>
+</div>
+
+<script>
+  document
+    .querySelectorAll<HTMLElement>("[data-project-grid]")
+    .forEach((grid) => {
+      const buttons = grid.querySelectorAll<HTMLButtonElement>("[data-filter]")
+      const items = grid.querySelectorAll<HTMLElement>("[data-format]")
+
+      buttons.forEach((button) => {
+        button.addEventListener("click", () => {
+          const selected = button.dataset.filter
+
+          buttons.forEach((b) =>
+            b.setAttribute("aria-pressed", String(b === button)),
+          )
+
+          items.forEach((item) => {
+            item.hidden = selected !== "All" && item.dataset.format !== selected
+          })
+        })
+      })
+    })
+</script>

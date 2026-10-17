@@ -6,6 +6,8 @@
   --color-primary: var(--color-bg);
   --color-secondary: var(--color-fg);
   --color-accent: var(--color-accent);
+  --color-card: var(--color-card);
+  --color-card-accent: var(--color-card-accent);
 }
 
 :root {
@@ -14,6 +16,8 @@
   --color-bg: #f0eeee;
   --color-fg: #141312;
   --color-accent: #46688a;
+  --color-card: #94a3b8;
+  --color-card-accent: #cbd5e1;
 }
 
 @media (prefers-color-scheme: dark) {
@@ -21,10 +25,16 @@
     --color-bg: #141312;
     --color-fg: #f0eeee;
     --color-accent: #7d9bb5;
+    --color-card: #1d293d;
+    --color-card-accent: #334155;
   }
 }
 
 @layer base {
+  html {
+    scrollbar-gutter: stable;
+  }
+
   body {
     font-family: var(--font-primary);
     color: var(--color-secondary);

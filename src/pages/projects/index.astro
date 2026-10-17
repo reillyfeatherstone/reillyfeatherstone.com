@@ -1,18 +1,8 @@
 ---
 import BaseLayout from "@layouts/BaseLayout.astro"
-import ProjectCard from "@components/ProjectCard.astro"
-import { getProjects } from "@utils/projects"
-
-const projects = await getProjects()
+import ProjectGrid from "@components/ProjectGrid.astro"
 ---
 
 <BaseLayout>
-  <h1 class="text-3xl font-bold">Projects</h1>
-  <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-    {
-      projects.map((project, i) => (
-        <ProjectCard project={project} priority={i < 6} />
-      ))
-    }
-  </div>
+  <ProjectGrid maxGrid={3} filterable />
 </BaseLayout>

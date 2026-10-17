@@ -16,7 +16,7 @@ const projects = defineCollection({
     title: z.string(),
     startDate: z.union([date, z.string()]),
     endDate: date.nullable().optional(),
-    format: z.string(),
+    format: z.enum(["Theatre", "Short Film"]),
     directors: z.array(z.string()).default([]),
     writers: z.array(z.string()).default([]),
     prodCompanies: z.array(z.string()).optional(),
