@@ -3,11 +3,14 @@
 
 @theme inline {
   --font-primary: Montserrat, sans-serif;
+  --color-background: var(--color-background);
   --color-primary: var(--color-bg);
   --color-secondary: var(--color-fg);
   --color-accent: var(--color-accent);
   --color-card: var(--color-card);
   --color-card-accent: var(--color-card-accent);
+  --color-accent-hover: var(--color-accent-hover);
+  --color-accent-plain: var(--color-accent-plain);
 }
 
 :root {
@@ -22,11 +25,14 @@
 
 @media (prefers-color-scheme: dark) {
   :root {
-    --color-bg: #141312;
+    --color-bg: #121214;
     --color-fg: #f0eeee;
-    --color-accent: #7d9bb5;
-    --color-card: #1d293d;
-    --color-card-accent: #334155;
+    --color-background: #0c0d10;
+    --color-accent: #38bdf8;
+    --color-accent-hover: #7dd3fc;
+    --color-card: #11141c;
+    --color-card-accent: #1f2636;
+    --color-accent-plain: #94a3b8;
   }
 }
 
@@ -38,8 +44,7 @@
   body {
     font-family: var(--font-primary);
     color: var(--color-secondary);
-    background-color: var(--color-primary);
-    max-width: 1280px;
+    background-color: var(--color-background);
     margin: 0 auto;
   }
 
@@ -48,6 +53,10 @@
     max-width: 1080px;
     padding: 0 20px;
     box-sizing: border-box;
+  }
+
+  footer {
+    background-color: #090b0e;
   }
 
   h1 {
@@ -89,9 +98,14 @@
       -0.1px 0 currentColor;
   }
 
-  .bio p span {
+  .bio p span,
+  .bio p a {
     color: var(--color-accent);
     font-weight: 600;
+  }
+
+  .bio p a:hover {
+    color: var(--color-accent-hover);
   }
 
   .bio h1 span {

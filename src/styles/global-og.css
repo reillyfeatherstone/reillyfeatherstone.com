@@ -1,0 +1,101 @@
+@import "tailwindcss";
+@plugin "@tailwindcss/typography";
+
+@theme inline {
+  --font-primary: Montserrat, sans-serif;
+  --color-primary: var(--color-bg);
+  --color-secondary: var(--color-fg);
+  --color-accent: var(--color-accent);
+  --color-card: var(--color-card);
+  --color-card-accent: var(--color-card-accent);
+}
+
+:root {
+  color-scheme: light dark;
+
+  --color-bg: #f0eeee;
+  --color-fg: #141312;
+  --color-accent: #46688a;
+  --color-card: #94a3b8;
+  --color-card-accent: #cbd5e1;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --color-bg: #141312;
+    --color-fg: #f0eeee;
+    --color-accent: #7d9bb5;
+    --color-card: #1d293d;
+    --color-card-accent: #334155;
+  }
+}
+
+@layer base {
+  html {
+    scrollbar-gutter: stable;
+  }
+
+  body {
+    font-family: var(--font-primary);
+    color: var(--color-secondary);
+    background-color: var(--color-primary);
+    max-width: 1280px;
+    margin: 0 auto;
+  }
+
+  main {
+    width: 100%;
+    max-width: 1080px;
+    padding: 0 20px;
+    box-sizing: border-box;
+  }
+
+  h1 {
+    font-size: 1.75rem;
+    margin-bottom: 20px;
+  }
+
+  h2 {
+    font-size: 1.5rem;
+    margin-bottom: 20px;
+  }
+
+  p {
+    font-size: 1rem;
+    line-height: 1.5;
+  }
+
+  .bio p {
+    margin-bottom: 20px;
+  }
+
+  header {
+    text-transform: uppercase;
+  }
+
+  nav {
+    font-size: 0.85rem;
+    font-weight: 500;
+  }
+
+  nav li a:hover,
+  nav li a[aria-current="page"] {
+    text-decoration: underline;
+    text-underline-offset: 4px;
+    text-decoration-color: var(--color-accent);
+    text-decoration-thickness: 1px;
+    text-shadow:
+      0.1px 0 currentColor,
+      -0.1px 0 currentColor;
+  }
+
+  .bio p span {
+    color: var(--color-accent);
+    font-weight: 600;
+  }
+
+  .bio h1 span {
+    color: var(--color-accent);
+    font-weight: 700;
+  }
+}

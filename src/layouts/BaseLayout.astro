@@ -1,6 +1,7 @@
 ---
 import "@styles/global.css"
 import Header from "@components/Header.astro"
+import Footer from "@components/Footer.astro"
 ---
 
 <html lang="en">
@@ -14,8 +15,9 @@ import Header from "@components/Header.astro"
   </head>
   <body class="">
     <Header />
-    <main class="my-5 md:my-10 mx-auto">
+    <main class="my-5 md:my-10 mx-auto pb-20">
       <slot />
     </main>
+    <Footer />
   </body>
 </html>
