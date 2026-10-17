@@ -55,8 +55,7 @@
     line-height: 1.5;
   }
 
-  p,
-  .bio {
+  .bio p {
     margin-bottom: 20px;
   }
 
