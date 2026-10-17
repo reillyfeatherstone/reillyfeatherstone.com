@@ -1,11 +1,9 @@
-// import { file } from "astro/loaders"
 import { glob } from "astro/loaders"
 import { defineCollection } from "astro:content"
 import { z } from "astro/zod"
 
 const projects = defineCollection({
   loader: glob({ base: "src/content/projects", pattern: "*.md" }),
-  // loader: file("src/content/projects.json"),
   schema: z.object({
     title: z.string(),
     date: z.string(),
@@ -30,6 +28,7 @@ const projects = defineCollection({
         }),
       )
       .default([]),
+    order: z.number(),
   }),
 })
 

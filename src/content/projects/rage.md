@@ -28,6 +28,7 @@ partners: []
 links: []
 banner: "https://reillyfeatherstone.com/wp-content/uploads/2025/06/90408388_3127980983899299_574780170255204352_o-1.jpg" # Temporary image
 gallery: []
+order: 2
 ---
 
 **RAGE** is a gritty, action packed, exsplosive production, making comments on police brutality and modern day, western society as a whole. Set on New Years Eve, we watch a town slowly decend into a drunken madness, with constant visits from the police. Directed by Peter Doran and Lynne Seymour. RAGE showcases the excitment, dillusion and chaos of a night out on New Years Eve in a popular British city.

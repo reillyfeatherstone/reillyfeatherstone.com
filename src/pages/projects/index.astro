@@ -1,9 +1,9 @@
 ---
 import BaseLayout from "@layouts/BaseLayout.astro"
-import { getCollection } from "astro:content"
 import ProjectCard from "@components/ProjectCard.astro"
+import { getProjects } from "@utils/projects"
 
-const projects = await getCollection("projects")
+const projects = await getProjects()
 ---
 
 <BaseLayout>
