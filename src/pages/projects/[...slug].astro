@@ -1,9 +1,13 @@
 ---
+import { formatDateRange } from "@utils/dates"
 import ProjectMeta from "@components/ProjectMeta.astro"
 import BaseLayout from "@layouts/BaseLayout.astro"
 import { Picture } from "astro:assets"
+import { render } from "astro:content"
 import { getProjects } from "@utils/projects"
 import Prose from "@components/Prose.astro"
+import ProjectLinks from "@components/ProjectLinks.astro"
+import ProjectNav from "@components/ProjectNav.astro"
 
 export async function getStaticPaths() {
   const projects = await getProjects()
@@ -24,9 +28,10 @@ export async function getStaticPaths() {
 }
 
 const { project, prev, next } = Astro.props
+const { startDate, endDate } = project.data
 
 const metadata = [
-  { label: "Date", value: project.data.date },
+  { label: "Date", value: formatDateRange(startDate, endDate) },
   { label: "Format", value: project.data.format },
   { label: "Directors", value: project.data.directors },
   { label: "Writers", value: project.data.writers },
@@ -36,15 +41,12 @@ const metadata = [
   { label: "Partners", value: project.data.partners },
 ]
 
-import { render } from "astro:content"
-import ProjectLinks from "@components/ProjectLinks.astro"
-import ProjectNav from "@components/ProjectNav.astro"
 const { Content } = await render(project)
+
 const rows = [
   ["md:col-span-7", "md:col-span-5"],
   ["md:col-span-5", "md:col-span-7"],
 ]
-
 const spans = rows.flat()
 ---
 

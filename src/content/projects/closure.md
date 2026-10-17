@@ -1,7 +1,8 @@
 ---
 title: "Closure"
-date: "2019"
-format: "Film"
+startDate: "2019"
+endDate: null
+format: "Short Film"
 directors: ["Keiron Self"]
 writers:
   [

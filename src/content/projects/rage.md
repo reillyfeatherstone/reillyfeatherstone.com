@@ -1,6 +1,7 @@
 ---
 title: "RAGE"
-date: "2020"
+startDate: "01/2020"
+endDate: "03/2020"
 format: "Theatre"
 directors: ["Peter Doran", "Lynne Seymoure"]
 writers: ["Simon Stephens"]

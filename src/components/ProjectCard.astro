@@ -1,4 +1,5 @@
 ---
+import { formatYearRange } from "@utils/dates"
 import { Picture } from "astro:assets"
 import type { CollectionEntry } from "astro:content"
 
@@ -8,7 +9,7 @@ interface Props {
 }
 
 const { project, priority = false } = Astro.props
-const { banner, title, date, format } = project.data
+const { banner, title, format, startDate, endDate } = project.data
 ---
 
 <a
@@ -21,7 +22,7 @@ const { banner, title, date, format } = project.data
     width={1200}
     height={675}
     widths={[400, 600, 800, 1200]}
-    sizes="(min-width: 768px) 33vw, 100vw"
+    sizes="(min-width: 1024px) 33vw, (min-width: 768px) 50vw, 100vw"
     formats={["avif", "webp", "jpg"]}
     fallbackFormat="jpg"
     quality="high"
@@ -32,7 +33,9 @@ const { banner, title, date, format } = project.data
   <div>
     <div class="flex items-baseline justify-between gap-2">
       <h3 class="font-medium text-lg">{title}</h3>
-      <p class="text-secondary/60 text-sm shrink-0">{date}</p>
+      <p class="text-secondary/60 text-sm shrink-0">
+        {formatYearRange(startDate, endDate)}
+      </p>
     </div>
     <p class="text-sm">{format}</p>
   </div>
