@@ -1,10 +1,10 @@
 ---
-import ContactForm from "@components/ContactForm.astro"
+import ContactForm from "@components/ContactForm.tsx"
 import BaseLayout from "@layouts/BaseLayout.astro"
 ---
 
 <BaseLayout title="Contact">
   <div>
-    <ContactForm />
+    <ContactForm client:load />
   </div>
 </BaseLayout>

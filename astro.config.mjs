@@ -5,6 +5,8 @@ import tailwindcss from "@tailwindcss/vite"
 
 import sitemap from "@astrojs/sitemap"
 
+import preact from "@astrojs/preact";
+
 // https://astro.build/config
 export default defineConfig({
   site: "https://reillyfeatherstone.com/",
@@ -17,9 +19,7 @@ export default defineConfig({
     plugins: [tailwindcss()],
   },
 
-  integrations: [
-    sitemap({
-      lastmod: new Date(),
-    }),
-  ],
+  integrations: [sitemap({
+    lastmod: new Date(),
+  }), preact()],
 })
