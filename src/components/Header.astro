@@ -80,10 +80,10 @@ const allLinks = [...leftLinks, ...rightLinks]
 
   <nav
     id="mobile-menu"
-    class="hidden absolute left-0 right-0 top-full z-50 text-secondary bg-primary/90 px-6 py-6 shadow-md md:static md:flex md:justify-center md:bg-transparent md:px-0 md:py-0 md:shadow-none lg:hidden"
+    class="hidden absolute left-0 right-0 top-full z-50 text-foreground bg-background/95 shadow-md md:static md:flex md:justify-center md:bg-transparent md:shadow-none lg:hidden"
   >
     <ul
-      class="flex flex-col gap-5 text-center md:flex-row md:gap-8 md:space-x-0 md:text-xs"
+      class="flex w-full flex-col text-center md:w-auto md:flex-row md:gap-8 md:text-xs"
     >
       {
         allLinks.map((link) => (
@@ -91,6 +91,7 @@ const allLinks = [...leftLinks, ...rightLinks]
             <a
               href={link.href}
               aria-current={link.href === pathname ? "page" : undefined}
+              class="block px-6 py-4 md:p-0"
             >
               {link.label}
             </a>

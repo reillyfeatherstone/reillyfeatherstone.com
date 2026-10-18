@@ -27,13 +27,13 @@ const { banner, title, format, startDate, endDate } = project.data
     fallbackFormat="jpg"
     quality="mid"
     priority={priority}
-    class="block w-full aspect-video object-cover rounded-md border border-gray-600/50 dark:border-gray-600 shadow-2xl/5 shadow-secondary"
+    class="block w-full aspect-video object-cover rounded-md border border-card-accent shadow-2xl/5 shadow-foreground"
   />
 
   <div>
     <div class="flex items-baseline justify-between gap-2">
       <h3 class="font-medium text-lg">{title}</h3>
-      <p class="text-secondary/60 text-sm shrink-0">
+      <p class="text-foreground/60 text-sm shrink-0">
         {formatYearRange(startDate, endDate)}
       </p>
     </div>

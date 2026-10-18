@@ -11,10 +11,18 @@ interface Props {
 const { links } = Astro.props
 ---
 
-<div class="links flex pt-5 gap-5">
+<div class="links flex flex-wrap pt-5 gap-5">
   {
     links.map(({ label, url }) => (
-      <a class="text-[#FFD800] font-bold" href={url} target="_blank">
+      <a
+        class={
+          url.includes("imdb.com")
+            ? "rounded bg-[#F5C518] px-3 py-0.5 font-bold text-black"
+            : "font-bold text-accent hover:text-accent-hover"
+        }
+        href={url}
+        target="_blank"
+      >
         {label}
       </a>
     ))

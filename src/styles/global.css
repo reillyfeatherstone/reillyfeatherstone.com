@@ -1,39 +1,54 @@
 @import "tailwindcss";
 @plugin "@tailwindcss/typography";
 
-@theme inline {
+@theme {
   --font-primary: Montserrat, sans-serif;
-  --color-background: var(--color-background);
-  --color-primary: var(--color-bg);
-  --color-secondary: var(--color-fg);
-  --color-accent: var(--color-accent);
-  --color-card: var(--color-card);
-  --color-card-accent: var(--color-card-accent);
-  --color-accent-hover: var(--color-accent-hover);
-  --color-accent-plain: var(--color-accent-plain);
+
+  --color-background: #0c0d10;
+  --color-foreground: #f0eeee;
+  --color-accent: #38bdf8;
+  --color-accent-hover: #7dd3fc;
+  --color-card: #11141c;
+  --color-card-accent: #1f2636;
+  --color-muted: #94a3b8;
+  --color-sunken: #090b0e;
 }
 
 :root {
-  color-scheme: light dark;
-
-  --color-bg: #f0eeee;
-  --color-fg: #141312;
-  --color-accent: #46688a;
-  --color-card: #94a3b8;
-  --color-card-accent: #cbd5e1;
+  color-scheme: dark;
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --color-bg: #121214;
-    --color-fg: #f0eeee;
-    --color-background: #0c0d10;
-    --color-accent: #38bdf8;
-    --color-accent-hover: #7dd3fc;
-    --color-card: #11141c;
-    --color-card-accent: #1f2636;
-    --color-accent-plain: #94a3b8;
-  }
+:root[data-theme="light"] {
+  color-scheme: light;
+
+  --color-background: #eef0f3;
+  --color-foreground: #0f1319;
+  --color-accent: #1f4e7a;
+  --color-accent-hover: #123a5c;
+  --color-card: #ffffff;
+  --color-card-accent: #d5dbe3;
+  --color-muted: #4a5565;
+  --color-sunken: #e1e5ea;
+}
+
+.prose {
+  --tw-prose-body: var(--color-foreground);
+  --tw-prose-headings: var(--color-foreground);
+  --tw-prose-lead: var(--color-muted);
+  --tw-prose-links: var(--color-accent);
+  --tw-prose-bold: var(--color-foreground);
+  --tw-prose-counters: var(--color-muted);
+  --tw-prose-bullets: var(--color-muted);
+  --tw-prose-hr: var(--color-card-accent);
+  --tw-prose-quotes: var(--color-foreground);
+  --tw-prose-quote-borders: var(--color-accent);
+  --tw-prose-captions: var(--color-muted);
+  --tw-prose-kbd: var(--color-foreground);
+  --tw-prose-code: var(--color-foreground);
+  --tw-prose-pre-code: var(--color-foreground);
+  --tw-prose-pre-bg: var(--color-sunken);
+  --tw-prose-th-borders: var(--color-card-accent);
+  --tw-prose-td-borders: var(--color-card-accent);
 }
 
 @layer base {
@@ -43,7 +58,7 @@
 
   body {
     font-family: var(--font-primary);
-    color: var(--color-secondary);
+    color: var(--color-foreground);
     background-color: var(--color-background);
     margin: 0 auto;
   }
@@ -53,10 +68,6 @@
     max-width: 1080px;
     padding: 0 20px;
     box-sizing: border-box;
-  }
-
-  footer {
-    background-color: #090b0e;
   }
 
   h1 {

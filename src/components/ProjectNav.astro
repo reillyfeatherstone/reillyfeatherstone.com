@@ -14,7 +14,7 @@ const { prev, next } = Astro.props
 
 <nav
   aria-label="Project navigation"
-  class="grid grid-cols-3 items-center gap-4 border-t border-gray-600 py-8 mt-10 text-sm uppercase"
+  class="grid grid-cols-3 items-center gap-4 border-t border-foreground/20 py-8 mt-10 text-sm uppercase"
 >
   {
     prev ? (
@@ -31,7 +31,7 @@ const { prev, next } = Astro.props
         </span>
         <span class="flex flex-col">
           <span class="font-medium">Previous</span>
-          <span class="normal-case text-secondary/70">{prev.title}</span>
+          <span class="normal-case text-foreground/70">{prev.title}</span>
         </span>
       </a>
     ) : (
@@ -41,7 +41,7 @@ const { prev, next } = Astro.props
 
   <a
     href="/projects"
-    class="justify-self-center font-medium hover:text-secondary/70"
+    class="justify-self-center font-medium hover:text-foreground/70"
   >
     All projects
   </a>
@@ -55,7 +55,7 @@ const { prev, next } = Astro.props
       >
         <span class="flex flex-col">
           <span class="font-medium">Next</span>
-          <span class="normal-case text-secondary/70">{next.title}</span>
+          <span class="normal-case text-foreground/70">{next.title}</span>
         </span>
         <span
           aria-hidden="true"
