@@ -4,11 +4,17 @@ import { getProjects } from "@utils/projects"
 
 interface Props {
   limit?: number
+  priority?: number
   maxGrid?: 1 | 2 | 3
   filterable?: boolean
 }
 
-const { limit = Infinity, maxGrid = 3, filterable = false } = Astro.props
+const {
+  limit = Infinity,
+  maxGrid = 3,
+  filterable = false,
+  priority = 6,
+} = Astro.props
 
 const projects = await getProjects()
 
@@ -54,7 +60,7 @@ const formats = [...new Set(projects.map((p) => p.data.format))]
     {
       selectedProjects.slice(0, limit).map((project, i) => (
         <div data-format={project.data.format}>
-          <ProjectCard project={project} priority={i < 6} />
+          <ProjectCard project={project} priority={i < priority} />
         </div>
       ))
     }
