@@ -3,13 +3,23 @@ import { defineConfig } from "astro/config"
 
 import tailwindcss from "@tailwindcss/vite"
 
+import sitemap from "@astrojs/sitemap"
+
 // https://astro.build/config
 export default defineConfig({
+  site: "https://reillyfeatherstone.com/",
   image: {
     domains: ["static.reillyfeatherstone.com", "reillyfeatherstone.com"],
     layout: "constrained",
   },
+
   vite: {
     plugins: [tailwindcss()],
   },
+
+  integrations: [
+    sitemap({
+      lastmod: new Date(),
+    }),
+  ],
 })
