@@ -7,6 +7,8 @@ import sitemap from "@astrojs/sitemap"
 
 import preact from "@astrojs/preact";
 
+import mdx from "@astrojs/mdx";
+
 // https://astro.build/config
 export default defineConfig({
   site: "https://reillyfeatherstone.com/",
@@ -21,5 +23,5 @@ export default defineConfig({
 
   integrations: [sitemap({
     lastmod: new Date(),
-  }), preact()],
+  }), preact(), mdx()],
 })

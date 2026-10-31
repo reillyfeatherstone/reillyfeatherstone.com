@@ -17,3 +17,13 @@ export function formatYearRange(start: Date | string, end?: Date | null) {
   const e = end?.getUTCFullYear()
   return e && e !== s ? `${s} – ${e}` : `${s}`
 }
+
+export function formatNowUpdatedDate(value: string) {
+  const [day, month, year] = value.split("-").map(Number)
+  return new Date(Date.UTC(year, month - 1, day)).toLocaleDateString("en-GB", {
+    day: "numeric",
+    month: "long",
+    year: "numeric",
+    timeZone: "UTC",
+  })
+}

@@ -13,6 +13,8 @@
     "lint": "eslint 'src/**/*.{js,ts,tsx,astro}'"
   },
   "dependencies": {
+    "@astrojs/markdown-satteri": "^0.4.6",
+    "@astrojs/mdx": "^8.1.2",
     "@astrojs/preact": "^6.1.0",
     "@astrojs/sitemap": "^3.7.4",
     "@tabler/icons-preact": "^3.50.0",

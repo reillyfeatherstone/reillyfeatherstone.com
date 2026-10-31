@@ -1,4 +1,6 @@
 ---
+import { IconArrowLeft, IconArrowRight } from "@tabler/icons-preact"
+
 interface Link {
   id: string
   title: string
@@ -27,8 +29,9 @@ const { prev, next } = Astro.props
           aria-hidden="true"
           class="transition-transform group-hover:-translate-x-1"
         >
-          ←
+          <IconArrowLeft size={16} />
         </span>
+
         <span class="flex flex-col">
           <span class="font-medium">Previous</span>
           <span class="normal-case text-foreground/70">{prev.title}</span>
@@ -61,7 +64,7 @@ const { prev, next } = Astro.props
           aria-hidden="true"
           class="transition-transform group-hover:translate-x-1"
         >
-          →
+          <IconArrowRight size={16} />
         </span>
       </a>
     ) : (
