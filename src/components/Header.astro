@@ -116,16 +116,28 @@ const allLinks = [...leftLinks, ...rightLinks]
 </header>
 
 <script>
-  const toggle = document.querySelector("#mobile-menu-toggle")
-  const menu = document.querySelector("#mobile-menu")
+  function setMenuOpen(open: boolean) {
+    const toggle = document.querySelector<HTMLElement>("#mobile-menu-toggle")
+    const menu = document.querySelector<HTMLElement>("#mobile-menu")
+    if (!toggle || !menu) return
 
-  toggle?.addEventListener("click", () => {
-    if (!menu) return
+    toggle.setAttribute("aria-expanded", String(open))
+    toggle.setAttribute("aria-label", open ? "Close menu" : "Open menu")
+    menu.classList.toggle("hidden", !open)
+  }
 
-    const isOpen = toggle.getAttribute("aria-expanded") === "true"
+  document.addEventListener("click", (e) => {
+    const target = e.target as Element
 
-    toggle.setAttribute("aria-expanded", String(!isOpen))
-    toggle.setAttribute("aria-label", isOpen ? "Open menu" : "Close menu")
-    menu.classList.toggle("hidden", isOpen)
+    const toggle = target.closest("#mobile-menu-toggle")
+    if (toggle) {
+      setMenuOpen(toggle.getAttribute("aria-expanded") !== "true")
+    } else if (target.closest("#mobile-menu a")) {
+      setMenuOpen(false)
+    }
+  })
+
+  document.addEventListener("keydown", (e) => {
+    if (e.key === "Escape") setMenuOpen(false)
   })
 </script>
