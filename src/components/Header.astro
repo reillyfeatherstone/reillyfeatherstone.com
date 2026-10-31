@@ -3,20 +3,20 @@ import { IconMenu2, IconX } from "@tabler/icons-preact"
 
 const pathname = Astro.url.pathname
 
-const leftLinks = [
-  { href: "/", label: "Home" },
-  { href: "/#about", label: "About" },
-  { href: "/projects/", label: "Work" },
-  { href: "/now/", label: "Now" },
+const links = [
+  { href: "/", label: "Home", position: "left" },
+  { href: "/#about", label: "About", position: "left" },
+  { href: "/projects/", label: "Work", position: "left" },
+  { href: "/now/", label: "Now", position: "right" },
+  {
+    href: "https://www.spotlight.com/5090-7833-5965",
+    label: "CV",
+    position: "right",
+  },
+  // { href: "/press/", label: "Press", position: "right" },
+  // { href: "/coaching/", label: "Coaching", position: "right" },
+  { href: "/contact/", label: "Contact", position: "right" },
 ]
-
-const rightLinks = [
-  { href: "/press/", label: "Press" },
-  { href: "/coaching/", label: "Coaching" },
-  { href: "/contact/", label: "Contact" },
-]
-
-const allLinks = [...leftLinks, ...rightLinks]
 ---
 
 <header
@@ -27,16 +27,19 @@ const allLinks = [...leftLinks, ...rightLinks]
   >
     <ul class="flex space-x-8">
       {
-        leftLinks.map((link) => (
-          <li>
-            <a
-              href={link.href}
-              aria-current={link.href === pathname ? "page" : undefined}
-            >
-              {link.label}
-            </a>
-          </li>
-        ))
+        links.map(
+          (link) =>
+            link.position === "left" && (
+              <li>
+                <a
+                  href={link.href}
+                  aria-current={link.href === pathname ? "page" : undefined}
+                >
+                  {link.label}
+                </a>
+              </li>
+            ),
+        )
       }
     </ul>
   </nav>
@@ -56,16 +59,19 @@ const allLinks = [...leftLinks, ...rightLinks]
   >
     <ul class="flex space-x-8">
       {
-        rightLinks.map((link) => (
-          <li>
-            <a
-              href={link.href}
-              aria-current={link.href === pathname ? "page" : undefined}
-            >
-              {link.label}
-            </a>
-          </li>
-        ))
+        links.map(
+          (link) =>
+            link.position === "right" && (
+              <li>
+                <a
+                  href={link.href}
+                  aria-current={link.href === pathname ? "page" : undefined}
+                >
+                  {link.label}
+                </a>
+              </li>
+            ),
+        )
       }
     </ul>
   </nav>
@@ -99,7 +105,7 @@ const allLinks = [...leftLinks, ...rightLinks]
       class="flex w-full flex-col text-center md:w-auto md:flex-row md:gap-8 md:text-xs"
     >
       {
-        allLinks.map((link) => (
+        links.map((link) => (
           <li>
             <a
               href={link.href}
