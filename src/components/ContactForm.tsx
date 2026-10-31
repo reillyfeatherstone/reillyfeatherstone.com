@@ -39,7 +39,7 @@ export default function ContactForm() {
         className="space-y-5"
       >
         <input type="hidden" name="form-name" value="contact" />
-        <h1 className="text-3xl font-bold">Contact</h1>
+        <h1 className="text-2xl font-bold">Email Me</h1>
 
         <label className={label}>
           Your Name:
@@ -72,7 +72,7 @@ export default function ContactForm() {
             placeholder="What would you like to talk about?"
             rows={6}
             required
-            className={`${field} resize-y`}
+            className={`${field} min-h-25 resize-y`}
           />
         </label>
 
@@ -89,7 +89,7 @@ export default function ContactForm() {
 
         <button
           type="submit"
-          className="w-full cursor-pointer rounded-md bg-accent px-5 py-2.5 font-semibold text-background transition-colors hover:bg-accent-hover focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-accent sm:w-auto"
+          className="w-full cursor-pointer rounded-md bg-accent px-5 py-2.5 font-semibold text-background transition-colors hover:bg-accent-hover focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-accent"
         >
           Send message
         </button>

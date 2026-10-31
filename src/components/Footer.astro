@@ -1,5 +1,5 @@
 ---
-
+import { IconMail, IconArrowUpRight, IconPhone } from "@tabler/icons-preact"
 ---
 
 <footer class="bg-sunken border-t border-foreground/20 pt-10">
@@ -34,31 +34,32 @@
             </p>
           </a>
           <div class="flex flex-col gap-1">
-            <div class="flex flex-col">
+            <div class="flex flex-col gap-2">
               <a
                 href="mailto:agents@nancyhudsonassociates.com"
-                class="flex items-center gap-3 text-sm group w-fit"
+                class="flex items-center gap-2 text-sm group w-fit"
               >
-                <span class="text-accent text-lg">✉</span>
-                <span>agents@nancyhudsonassociates.com</span>
-                <span
-                  class="text-accent transition-transform group-hover:translate-x-1"
+                <IconMail size={18} className="text-accent" />
+                <span class="text-xs sm:text-sm"
+                  >agents@nancyhudsonassociates.com</span
                 >
-                  ↗
-                </span>
+                <IconArrowUpRight
+                  size={12}
+                  className="text-accent transition-transform group-hover:translate-x-1"
+                />
               </a>
 
               <a
                 href="tel:02074995548"
-                class="flex items-center gap-3 text-sm tracking-wide group w-fit"
+                class="flex items-center gap-2 text-sm tracking-wide group w-fit"
               >
-                <span class="text-accent text-lg">✆</span>
-                <span>02074995548</span>
-                <span
-                  class="text-accent transition-transform group-hover:translate-x-1"
-                >
-                  ↗
-                </span>
+                <!-- <span class="text-accent text-lg">✆</span> -->
+                <IconPhone size={18} className="text-accent" />
+                <span class="text-xs sm:text-sm">02074995548</span>
+                <IconArrowUpRight
+                  size={12}
+                  className="text-accent transition-transform group-hover:translate-x-1"
+                />
               </a>
             </div>
           </div>
@@ -80,15 +81,16 @@
 
           <a
             href="mailto:enquiries@reillyfeatherstone.com"
-            class="flex items-center gap-3 text-sm group w-fit"
+            class="flex items-center gap-2 text-sm group w-fit"
           >
-            <span class="text-accent text-lg">✉</span>
-            <span>enquiries@reillyfeatherstone.com</span>
-            <span
-              class="text-accent transition-transform group-hover:translate-x-1"
+            <IconMail size={18} className="text-accent" />
+            <span class="text-xs sm:text-sm"
+              >enquiries@reillyfeatherstone.com</span
             >
-              ↗
-            </span>
+            <IconArrowUpRight
+              size={12}
+              className="text-accent transition-transform group-hover:translate-x-1"
+            />
           </a>
         </div>
       </div>

@@ -1,4 +1,6 @@
 ---
+import { IconMenu2, IconX } from "@tabler/icons-preact"
+
 const pathname = Astro.url.pathname
 
 const leftLinks = [
@@ -70,12 +72,23 @@ const allLinks = [...leftLinks, ...rightLinks]
 
   <button
     id="mobile-menu-toggle"
-    class="absolute right-5 top-1/2 -translate-y-1/2 text-2xl md:hidden"
+    class="group absolute right-5 top-1/2 size-7 -translate-y-1/2 md:hidden"
     aria-label="Open menu"
     aria-expanded="false"
     aria-controls="mobile-menu"
   >
-    ☰
+    <span
+      class="absolute inset-0 flex items-center justify-center transition duration-200 motion-reduce:transition-none group-aria-expanded:-rotate-90 group-aria-expanded:opacity-0 hover:cursor-pointer"
+      aria-hidden="true"
+    >
+      <IconMenu2 size={28} stroke={2} />
+    </span>
+    <span
+      class="absolute inset-0 flex items-center justify-center rotate-90 opacity-0 transition duration-200 motion-reduce:transition-none group-aria-expanded:rotate-0 group-aria-expanded:opacity-100 hover:cursor-pointer"
+      aria-hidden="true"
+    >
+      <IconX size={28} stroke={2} />
+    </span>
   </button>
 
   <nav
@@ -113,8 +126,6 @@ const allLinks = [...leftLinks, ...rightLinks]
 
     toggle.setAttribute("aria-expanded", String(!isOpen))
     toggle.setAttribute("aria-label", isOpen ? "Open menu" : "Close menu")
-    toggle.textContent = isOpen ? "☰" : "×"
-
     menu.classList.toggle("hidden", isOpen)
   })
 </script>
