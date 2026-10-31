@@ -27,6 +27,7 @@ cast:
   ]
 partners: []
 links: []
+featured: false
 banner: "https://reillyfeatherstone.com/wp-content/uploads/2025/06/90408388_3127980983899299_574780170255204352_o-1.jpg" # Temporary image
 gallery: []
 order: 2

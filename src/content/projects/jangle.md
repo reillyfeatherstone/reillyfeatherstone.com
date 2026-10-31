@@ -9,6 +9,7 @@ venues: []
 cast: ["James Arkinstall", "Reilly Featherstone", "Serena Lewis", "Violet Rees"]
 partners: []
 links: [{ label: "IMDb", url: "https://www.imdb.com/title/tt16248660/" }]
+featured: false
 banner: "https://reillyfeatherstone.com/wp-content/uploads/2025/06/Jangle-How-do-you-know-169.jpg" # Temporary image
 gallery: [
     {

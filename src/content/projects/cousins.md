@@ -9,6 +9,7 @@ prodCompanies: []
 venues: []
 cast: ["Zoë Scott", "Reilly Featherstone"]
 partners: []
+featured: true
 links: []
 banner: "https://reillyfeatherstone.com/wp-content/uploads/2026/03/Thumbnail_1.4.3-1024x576.jpg" # Temporary image
 gallery: [

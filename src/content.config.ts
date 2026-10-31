@@ -23,10 +23,11 @@ const projects = defineCollection({
     venues: z.array(z.string()).default([]),
     cast: z.array(z.string()).default([]),
     partners: z.array(z.string()).default([]),
+    featured: z.boolean().default(false),
     links: z
       .array(z.object({ label: z.string(), url: z.string() }))
       .default([]),
-    banner: z.string(),
+    banner: z.string().optional(),
     gallery: z
       .array(
         z.object({

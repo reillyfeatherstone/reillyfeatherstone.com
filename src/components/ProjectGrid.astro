@@ -7,6 +7,7 @@ interface Props {
   priority?: number
   maxGrid?: 1 | 2 | 3
   filterable?: boolean
+  featured?: boolean
 }
 
 const {
@@ -14,9 +15,14 @@ const {
   maxGrid = 3,
   filterable = false,
   priority = 6,
+  featured = false,
 } = Astro.props
 
-const projects = await getProjects()
+const allProjects = await getProjects()
+
+const projects = featured
+  ? allProjects.filter((p) => p.data.featured)
+  : allProjects
 
 const grids = {
   1: "grid-cols-1",
@@ -25,16 +31,18 @@ const grids = {
 } as const
 
 const selectedProjects = projects.slice(0, limit)
-const hasMore = projects.length > selectedProjects.length
-const emptySlots = (maxGrid - (limit % maxGrid)) % maxGrid
-const showViewMore = hasMore && emptySlots > 0
+// const hasMore = projects.length > selectedProjects.length
+// const emptySlots = (maxGrid - (limit % maxGrid)) % maxGrid
+// const showViewMore = hasMore && emptySlots > 0
 
 const formats = [...new Set(projects.map((p) => p.data.format))]
 ---
 
 <div data-project-grid>
   <div class="flex justify-between">
-    <h1 class="text-3xl font-bold">Projects</h1>
+    <h1 class="text-3xl font-bold">
+      {featured ? "Featured Projects" : "Projects"}
+    </h1>
     {
       filterable && (
         <div
@@ -65,7 +73,7 @@ const formats = [...new Set(projects.map((p) => p.data.format))]
       ))
     }
     {
-      showViewMore && (
+      featured && (
         <a
           href="/projects"
           class="self-start border-2 border-card-accent aspect-video flex items-center justify-center rounded-md bg-card text-foreground font-semibold hover:bg-card-accent transition-colors"

@@ -21,6 +21,7 @@ cast:
   ]
 partners: ["Sherman Theatre"]
 links: []
+featured: true
 banner: "https://reillyfeatherstone.com/wp-content/uploads/2025/06/Focus-9-scaled-e1749234666985-1024x543.jpg" # Temporary image
 gallery: [
     {

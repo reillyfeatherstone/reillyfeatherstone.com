@@ -10,7 +10,7 @@ venues: ["Touring"]
 cast: ["Enid Gruffudd", "Carys Parry", "Reilly Featherstone"]
 partners: ["Rhondda Cynon Taf CBC's Educational Psychology Service"]
 links: []
-banner: "https://reillyfeatherstone.com/wp-content/uploads/2026/03/IRL-1024x542.png" # Temporary image
+# banner: "https://reillyfeatherstone.com/wp-content/uploads/2026/03/IRL-1024x542.png" # Temporary image
 gallery: []
 order: 8
 ---

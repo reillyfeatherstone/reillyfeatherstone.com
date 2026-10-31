@@ -4,6 +4,7 @@ import BaseLayout from "@layouts/BaseLayout.astro"
 import ProjectGrid from "@components/ProjectGrid.astro"
 const headshot =
   "https://static.reillyfeatherstone.com/Reilly%20Featherstone%20Headshot.jpg"
+import { Content as Bio } from "@content/bio.md"
 ---
 
 <BaseLayout title="Home">
@@ -19,57 +20,18 @@ const headshot =
         loading="eager"
         inferSize
       />
-      <div class="bio" id="about">
-        <h1 class="font-medium">
-          Reilly Featherstone is an <span class="font-bold">actor</span>, <span
-            class="font-bold">musician</span
-          > and{" "}
-          <span class="font-bold">theatre maker</span> based in Cardiff.
-        </h1>
-        <div class="">
-          <p>
-            He trained at the <span class="font-bold"
-              >Royal Welsh College of Music & Drama</span
-            >, graduating with an MA in Acting in 2025. He has worked with
-            companies including <span class="font-bold"
-              >Welsh National Theatre</span
-            >, <span class="font-bold">Sherman Theatre</span> and{" "}
-            <span class="font-bold">Spectacle Theatre</span>. With a particular
-            interest in new writing, Reilly has participated in a number of
-            research and development projects, exploring new plays such as <span
-              class="font-bold italic">Uncle Christopher</span
-            > as part of <span class="font-bold">Simon Harris'</span> WNT Studio pilot.
-            He went on to premiere the new Welsh plays <span
-              class="font-bold italic">In Real Life</span
-            > and <span class="font-bold italic">Salem</span>, the latter of
-            which went on to the West End.
-          </p>
-          <p>
-            Alongside new writing, Reilly has a passion for classical theatre
-            and the enduring relevance of these stories to contemporary
-            audiences. His work has taken him from West Wales to London's West
-            End, with performances at venues including the <span
-              class="font-bold"
-              >Young Vic, Savoy Theatre, Richard Burton Theatre, The Caird,
-              Chapter Arts Centre</span
-            > and <span class="font-bold">Riverfront Theatre</span>. He played
-            Sydney Curnow Vosper in <span class="font-bold italic">Salem</span>,
-            commissioned by <span class="font-bold">Sherman Theatre</span>, and
-            is keen to continue working with companies and artists across the UK
-            and beyond.
-          </p>
-          <p>
-            Alongside performing, Reilly develops his own work, including an
-            original one-act play <span class="font-bold italic"
-              >Write of Passage</span
-            >. He is a passionate Welsh learner.
-          </p>
-        </div>
+      <div
+        id="about"
+        class="bio prose
+        prose-h1:no-underline prose-h1:font-medium prose-h1:text-[1.75rem] prose-h1:leading-10
+        prose-strong:font-bold prose-strong:text-accent
+        prose-a:no-underline prose-a:font-bold prose-a:italic"
+      >
+        <Bio />
       </div>
     </div>
   </div>
-
   <div class="pt-30">
-    <ProjectGrid maxGrid={2} limit={3} priority={0} />
+    <ProjectGrid maxGrid={2} limit={3} priority={0} featured />
   </div>
 </BaseLayout>

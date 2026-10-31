@@ -51,19 +51,25 @@ const spans = rows.flat()
 ---
 
 <BaseLayout title={project.data.title}>
-  <div class="w-full aspect-585/300 md:aspect-1280/533 overflow-hidden">
-    <Picture
-      class="block w-full h-full object-cover"
-      src={project.data.banner}
-      alt={project.data.title}
-      quality={"high"}
-      formats={["avif", "webp", "jpg"]}
-      fallbackFormat="jpg"
-      loading="eager"
-      inferSize
-      fit="cover"
-    />
-  </div>
+  {
+    project.data.banner ? (
+      <div class="w-full aspect-585/300 md:aspect-1280/533 overflow-hidden">
+        <Picture
+          class="block w-full h-full object-cover"
+          src={project.data.banner}
+          alt={project.data.title}
+          quality={"high"}
+          formats={["avif", "webp", "jpg"]}
+          fallbackFormat="jpg"
+          loading="eager"
+          inferSize
+          fit="cover"
+        />
+      </div>
+    ) : (
+      <div />
+    )
+  }
   <h1 class="text-5xl uppercase font-bold pt-5 md:text-6xl lg:text-7xl">
     {project.data.title}
   </h1>
