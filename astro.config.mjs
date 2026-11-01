@@ -43,7 +43,6 @@ export default defineConfig({
     partytown({
       config: {
         forward: ["posthog.capture", "posthog.identify", "posthog.reset"],
-        debug: false,
       },
     }),
   ],
