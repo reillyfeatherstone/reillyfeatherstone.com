@@ -84,7 +84,11 @@ export default function ContactForm() {
           />
         </label>
 
-        <div data-netlify-recaptcha="true"></div>
+        <div
+          class="g-recaptcha"
+          data-sitekey={process.env.SITE_RECAPTCHA_KEY}
+          data-action="SEND"
+        ></div>
 
         {status === "success" && (
           <p className="rounded-md border border-green-500 bg-green-500/10 px-4 py-3 text-sm text-green-600">
