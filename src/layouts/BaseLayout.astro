@@ -2,17 +2,32 @@
 import "@styles/global.css"
 import Header from "@components/Header.astro"
 import Footer from "@components/Footer.astro"
+import Head from "@components/Head.astro"
 
-const { title } = Astro.props
-const siteName = "Reilly Featherstone"
-const fullTitle = title ? `${title} | ${siteName}` : siteName
+interface Props {
+  title?: string
+  description?: string
+  image?: string
+  imageAlt?: string
+  type?: "website" | "article"
+  schema?: Record<string, unknown>
+}
+
+const { title, description, image, imageAlt, type, schema } = Astro.props
 ---
 
 <html lang="en">
   <head>
-    <title>{`${fullTitle}`}</title>
-    <link rel="sitemap" href="/sitemap-index.xml" />
     <meta charset="utf-8" />
+    <Head
+      title={title}
+      description={description}
+      image={image}
+      imageAlt={imageAlt}
+      type={type}
+      schema={schema}
+    />
+
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
     <link rel="icon" href="/favicon.ico" />
     <meta name="viewport" content="width=device-width" />

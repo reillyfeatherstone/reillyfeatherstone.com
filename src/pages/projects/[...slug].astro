@@ -8,6 +8,8 @@ import { getProjects } from "@utils/projects"
 import Prose from "@components/Prose.astro"
 import ProjectLinks from "@components/ProjectLinks.astro"
 import ProjectNav from "@components/ProjectNav.astro"
+import { markdownToDescription } from "@utils/markdownToDescription"
+import { buildProjectSchema } from "@data/projectSchema"
 
 export async function getStaticPaths() {
   const projects = await getProjects()
@@ -42,6 +44,13 @@ const metadata = [
 ]
 
 const { Content } = await render(project)
+const description = markdownToDescription(project.body) || undefined
+
+const schema = buildProjectSchema(project.data, {
+  url: new URL(Astro.url.pathname, Astro.site).href,
+  description,
+  image: project.data.banner || undefined,
+})
 
 const rows = [
   ["md:col-span-7", "md:col-span-5"],
@@ -50,7 +59,13 @@ const rows = [
 const spans = rows.flat()
 ---
 
-<BaseLayout title={project.data.title}>
+<BaseLayout
+  title={project.data.title}
+  description={description}
+  image={project.data.banner || undefined}
+  imageAlt={project.data.title}
+  schema={schema}
+>
   {
     project.data.banner ? (
       <div class="w-full aspect-585/300 md:aspect-1280/533 overflow-hidden">

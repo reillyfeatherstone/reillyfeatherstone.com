@@ -1,0 +1,49 @@
+---
+import { personSchema } from "@data/personSchema"
+
+interface Props {
+  title?: string
+  description?: string
+  image?: string
+  imageAlt?: string
+  type?: "website" | "article"
+  schema?: Record<string, unknown>
+}
+
+const siteName = "Reilly Featherstone"
+
+const {
+  title,
+  description = "The official website of Welsh actor Reilly Featherstone, showcasing his work, experience and projects across theatre, film and television.",
+  image = "https://static.reillyfeatherstone.com/Salem-Banner.jpg",
+  imageAlt = "Reilly Featherstone",
+  type = "website",
+  schema,
+} = Astro.props
+
+const fullTitle = title ? `${title} | ${siteName}` : siteName
+
+const canonicalURL = new URL(Astro.url.pathname, Astro.site)
+
+const toJsonLd = (obj: unknown) => JSON.stringify(obj).replace(/</g, "\\u003c")
+---
+
+<link rel="sitemap" href="/sitemap-index.xml" />
+<link rel="canonical" href={canonicalURL} />
+
+<title>{fullTitle}</title>
+
+<meta property="og:site_name" content={siteName} />
+<meta property="og:title" content={fullTitle} />
+<meta property="og:description" content={description} />
+<meta property="og:type" content={type} />
+<meta property="og:url" content={canonicalURL} />
+<meta property="og:image" content={image} />
+<meta property="og:image:alt" content={imageAlt} />
+
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:title" content={fullTitle} />
+<meta name="twitter:description" content={description} />
+<meta name="twitter:image" content={image} />
+<script type="application/ld+json" set:html={toJsonLd(personSchema)} />
+{schema && <script type="application/ld+json" set:html={toJsonLd(schema)} />}

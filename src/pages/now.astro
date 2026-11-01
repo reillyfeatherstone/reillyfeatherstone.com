@@ -6,7 +6,10 @@ import { Content, frontmatter } from "@content/now.mdx"
 const title = frontmatter.title
 ---
 
-<BaseLayout title="Now">
+<BaseLayout
+  title="Now"
+  description="See what Welsh actor Reilly Featherstone is up to right now, from current projects and rehearsals to what's coming up next."
+>
   <h1 class="text-3xl font-bold mb-2">{title}</h1>
   <div class="">
     <Prose class="prose-h2:text-accent prose-h2:no-underline prose-h2:mb-4">
