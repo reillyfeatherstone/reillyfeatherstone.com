@@ -34,10 +34,18 @@ export default function ContactForm() {
       <form
         name="contact"
         method="POST"
+        netlify-honeypot="bot-field"
+        data-netlify-recaptcha="true"
         data-netlify="true"
         onSubmit={handleSubmit}
         className="space-y-5"
       >
+        <p class="hidden">
+          <label>
+            Leave this field blank if you're human:{" "}
+            <input name="bot-field" type="text" />
+          </label>
+        </p>
         <input type="hidden" name="form-name" value="contact" />
         <h1 className="text-2xl font-bold">Email Me</h1>
 
@@ -76,11 +84,14 @@ export default function ContactForm() {
           />
         </label>
 
+        <div data-netlify-recaptcha="true"></div>
+
         {status === "success" && (
           <p className="rounded-md border border-green-500 bg-green-500/10 px-4 py-3 text-sm text-green-600">
             Thank you! Your message has been sent.
           </p>
         )}
+
         {status === "error" && (
           <p className="rounded-md border border-red-500 bg-red-500/10 px-4 py-3 text-sm text-red-600">
             Something went wrong. Please try again.
