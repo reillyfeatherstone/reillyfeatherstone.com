@@ -15,6 +15,7 @@
   "dependencies": {
     "@astrojs/markdown-satteri": "^0.4.6",
     "@astrojs/mdx": "^8.1.2",
+    "@astrojs/partytown": "^2.1.9",
     "@astrojs/preact": "^6.1.0",
     "@astrojs/sitemap": "^3.7.4",
     "@tabler/icons-preact": "^3.50.0",

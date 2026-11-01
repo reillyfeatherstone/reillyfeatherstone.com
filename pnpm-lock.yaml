@@ -14,6 +14,9 @@ importers:
       '@astrojs/mdx':
         specifier: ^8.1.2
         version: 8.1.2(@astrojs/markdown-satteri@0.4.6)(astro@7.3.8(@types/node@24.19.2)(jiti@2.7.0)(yaml@2.9.1))
+      '@astrojs/partytown':
+        specifier: ^2.1.9
+        version: 2.1.9
       '@astrojs/preact':
         specifier: ^6.1.0
         version: 6.1.0(@babel/core@7.29.7)(@types/node@24.19.2)(jiti@2.7.0)(preact@11.0.1)(yaml@2.9.1)
@@ -146,6 +149,9 @@ packages:
     peerDependenciesMeta:
       '@astrojs/markdown-remark':
         optional: true
+
+  '@astrojs/partytown@2.1.9':
+    resolution: {integrity: sha512-jAywLxinR9XRHH8NB4AOJL0cohFlqX+VWEsC9WUWTWNxfDun774rpi8DMaXPOieGjuAOSkr2BM5ejcdY/eZhsQ==}
 
   '@astrojs/preact@6.1.0':
     resolution: {integrity: sha512-9OMi7GgwA13sTTV0n7K+DXkmaG4dCXrtTrHakX87XdFbZMSyaaJkCBlgzxAsKGH6VVJBGWcSsRmaUmS1pwqTNw==}
@@ -621,6 +627,11 @@ packages:
     peerDependencies:
       preact: ^10.4.0 || ^11.0.0-0
       vite: '>=2.0.0'
+
+  '@qwik.dev/partytown@1.0.3':
+    resolution: {integrity: sha512-fJuU5lNA8Gr09q18f3y+chCp4etnStVI5ctv87rFnVJ/mDVdZKHeI+BBNmopa/WEXOKAzmvapwIYlwy0nBXM/w==}
+    engines: {node: '>=18.0.0'}
+    hasBin: true
 
   '@rolldown/binding-android-arm-eabi@1.2.13':
     resolution: {integrity: sha512-Vu/NICrgdRvUOeaJZIyB2FP63s6fO/4ud5l8dXmxDx9yDyn+mN0y+gsvsVviSli+T361Aqo0h46EuMoobrwawA==}
@@ -2708,6 +2719,11 @@ snapshots:
       astro: 7.3.8(@types/node@24.19.2)(jiti@2.7.0)(yaml@2.9.1)
       es-module-lexer: 3.0.3
 
+  '@astrojs/partytown@2.1.9':
+    dependencies:
+      '@qwik.dev/partytown': 1.0.3
+      mrmime: 2.0.1
+
   '@astrojs/preact@6.1.0(@babel/core@7.29.7)(@types/node@24.19.2)(jiti@2.7.0)(preact@11.0.1)(yaml@2.9.1)':
     dependencies:
       '@astrojs/internal-helpers': 0.13.0
@@ -3224,6 +3240,8 @@ snapshots:
       vite: 8.3.4(@types/node@24.19.2)(jiti@2.7.0)(yaml@2.9.1)
     transitivePeerDependencies:
       - supports-color
+
+  '@qwik.dev/partytown@1.0.3': {}
 
   '@rolldown/binding-android-arm-eabi@1.2.13':
     optional: true
