@@ -12,30 +12,31 @@ partners: []
 featured: true
 links: []
 banner: "https://static.reillyfeatherstone.com/Cousins-Banner.jpg"
-gallery: [
+gallery:
+  [
     {
       url: "https://static.reillyfeatherstone.com/Cousins-1.jpg",
-      alt: "Alt 1",
-      # title: "title",
-      # label: "label",
+      alt: "Reilly Featherstone in Cousins (2025)",
+      title: "Reilly Featherstone",
+      label: "Cousins (2025)",
     },
     {
       url: "https://static.reillyfeatherstone.com/Cousins-2.jpg",
-      alt: "Alt 1",
-      # title: "title",
-      # label: "label",
+      alt: "Zoë Scott in Cousins (2025)",
+      title: "Zoë Scott",
+      label: "Cousins (2025)",
     },
     {
       url: "https://static.reillyfeatherstone.com/Cousins-3.png",
-      alt: "Alt 1",
-      # title: "title",
-      # label: "label",
+      alt: "Zoë Scott and Reilly Featherstone in Cousins (2025)",
+      title: "Zoë Scott, Reilly Featherstone",
+      label: "Cousins (2025)",
     },
     {
       url: "https://static.reillyfeatherstone.com/Cousins-4.jpg",
-      alt: "Alt 1",
-      # title: "title",
-      # label: "label",
+      alt: "Reilly Featherstone in Cousins (2025)",
+      title: "Reilly Featherstone",
+      label: "Cousins (2025)",
     },
   ]
 order: 7

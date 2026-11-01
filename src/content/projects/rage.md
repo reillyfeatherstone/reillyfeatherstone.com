@@ -29,36 +29,37 @@ partners: []
 links: []
 featured: false
 banner: "https://static.reillyfeatherstone.com/Rage-Banner.jpg"
-gallery: [
+gallery:
+  [
     {
       url: "https://static.reillyfeatherstone.com/Rage-1.jpg",
-      alt: "Alt 1",
-      # title: "title",
-      # label: "label",
+      alt: "Reilly Featherstone, Huw Ferguson and John Lamont in the 2020 play, RAGE at The Halliwell Theatre",
+      title: "John Lamont, Huw Ferguson, Reilly Featherstone",
+      label: "Photo: Jennie Jen",
     },
     {
       url: "https://static.reillyfeatherstone.com/Rage-2.jpg",
-      alt: "Alt 1",
-      # title: "title",
-      # label: "label",
+      alt: "Reilly Featherstone in the 2020 play, RAGE at The Halliwell Theatre",
+      title: "Reilly Featherstone, Amelia Ryan, Harvey Clarke, James Arkinstall, Josh Vorwerk",
+      label: "Photo: Jennie Jen",
     },
     {
       url: "https://static.reillyfeatherstone.com/Rage-3.jpg",
-      alt: "Alt 1",
-      # title: "title",
-      # label: "label",
+      alt: "Megan Lewis, Ellen Kathryn and Reilly Featherstone in the 2020 play, RAGE at The Halliwell Theatre",
+      title: "Megan Lewis, Ellen Kathryn, Reilly Featherstone",
+      label: "Photo: Jennie Jen",
     },
     {
       url: "https://static.reillyfeatherstone.com/Rage-4.jpg",
-      alt: "Alt 1",
-      # title: "title",
-      # label: "label",
+      alt: "Reilly Featherstone in the 2020 play, RAGE at The Halliwell Theatre",
+      title: "Reilly Featherstone",
+      label: "Photo: Jennie Jen",
     },
     {
       url: "https://static.reillyfeatherstone.com/Rage-5.jpg",
-      alt: "Alt 1",
-      # title: "title",
-      # label: "label",
+      alt: "Reilly Featherstone, Harvey Clarke, James Arkinstall and Josh Vorwerk in the 2020 play, RAGE at The Halliwell Theatre",
+      title: "Reilly Featherstone, Harvey Clarke, James Arkinstall, Josh Vorwerk",
+      label: "Photo: Jennie Jen",
     },
   ]
 order: 2

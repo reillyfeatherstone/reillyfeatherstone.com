@@ -1,6 +1,7 @@
 ---
 title: "Jangle"
 startDate: 12/2021
+endDate:
 format: "Short Film"
 directors: ["Andrew Creak"]
 writers: ["Simone Greenwood"]
@@ -11,30 +12,31 @@ partners: []
 links: [{ label: "IMDb", url: "https://www.imdb.com/title/tt16248660/" }]
 featured: false
 banner: "https://static.reillyfeatherstone.com/Jangle%20-%20Banner.jpg"
-gallery: [
+gallery:
+  [
     {
       url: "https://static.reillyfeatherstone.com/Jangle%201.jpg",
-      alt: "Alt 1",
-      # title: "title",
-      # label: "label",
+      alt: "Reilly Featherstone in 2021 Christmas Film; Jangle",
+      title: "Reilly Featherstone",
+      label: "Jangle (2021)",
     },
     {
       url: "https://static.reillyfeatherstone.com/Jangle%202.jpg",
-      alt: "Alt 1",
-      # title: "title",
-      # label: "label",
+      alt: "Reilly Featherstone and James Arkinstall in 2021 Christmas Film; Jangle",
+      title: "Reilly Featherstone, James Arkinstall",
+      label: "Jangle (2021)",
     },
     {
       url: "https://static.reillyfeatherstone.com/Jangle%203.jpg",
-      alt: "Alt 1",
-      # title: "title",
-      # label: "label",
+      alt: "Reilly Featherstone in 2021 Christmas Film; Jangle",
+      title: "Reilly Featherstone",
+      label: "Jangle (2021)",
     },
     {
       url: "https://static.reillyfeatherstone.com/Jangle%204.jpg",
-      alt: "Alt 1",
-      # title: "title",
-      # label: "label",
+      alt: "James Arkinstall in 2021 Christmas Film; Jangle",
+      title: "James Arkinstall",
+      label: "Jangle (2021)",
     },
   ]
 order: 4

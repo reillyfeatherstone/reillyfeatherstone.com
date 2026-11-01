@@ -15,35 +15,37 @@ cast:
     "Lois Elenid",
     "Fatou Jackson",
     "Grania Whelan",
+    "Daniel Bamdad",
   ]
 partners: []
 links: []
 featured: true
 banner: "https://static.reillyfeatherstone.com/Dinner%20Banner.png"
-gallery: [
+gallery:
+  [
     {
       url: "https://static.reillyfeatherstone.com/Dinner-1.jpg",
-      alt: "Alt 1",
-      # title: "title",
-      # label: "label",
+      alt: "Lois Elenid, Reilly Featherstone and Joe Hewetson in the 2025 play RAGE at the Caird Studio",
+      title: "Lois Elenid, Reilly Featherstone, Joe Hewetson",
+      label: "Photo: Jorge Lizalde",
     },
     {
       url: "https://static.reillyfeatherstone.com/Dinner-2.jpg",
-      alt: "Alt 1",
-      # title: "title",
-      # label: "label",
+      alt: "Lauryn Jenkins and Reilly Featherstone in the 2025 play RAGE at the Caird Studio",
+      title: "Lauryn Jenkins, Reilly Featherstone",
+      label: "Photo: Jorge Lizalde",
     },
     {
       url: "https://static.reillyfeatherstone.com/Dinner-3.jpg",
-      alt: "Alt 1",
-      # title: "title",
-      # label: "label",
+      alt: "Joe Hewetson, Reilly Featherstone and Daniel Bamdad in the 2025 play RAGE at the Caird Studio",
+      title: "Joe Hewetson, Reilly Featherstone, Daniel Bamdad",
+      label: "Photo: Jorge Lizalde",
     },
     {
       url: "https://static.reillyfeatherstone.com/Dinner-4.jpg",
-      alt: "Alt 1",
-      # title: "title",
-      # label: "label",
+      alt: "Reilly Featherstone and Joe Hewetson in the 2025 play RAGE at the Caird Studio",
+      title: "Reilly Featherstone, Joe Hewetson",
+      label: "Photo: Jorge Lizalde",
     },
   ]
 order: 5

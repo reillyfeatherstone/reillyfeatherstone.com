@@ -99,9 +99,11 @@ const spans = rows.flat()
             inferSize
           />
           {(image.title || image.label) && (
-            <figcaption class="flex justify-between gap-4 pt-2 px-1 text-xs">
-              <span class="text-foreground/90">{image.title}</span>
-              <span class="text-foreground/50">{image.label}</span>
+            <figcaption class="flex justify-between items-start gap-4 pt-2 px-1 text-xs">
+              <span class="min-w-0 text-foreground/90">{image.title}</span>
+              <span class="shrink-0 whitespace-nowrap text-foreground/50">
+                {image.label}
+              </span>
             </figcaption>
           )}
         </figure>
