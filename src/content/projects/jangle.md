@@ -10,10 +10,28 @@ cast: ["James Arkinstall", "Reilly Featherstone", "Serena Lewis", "Violet Rees"]
 partners: []
 links: [{ label: "IMDb", url: "https://www.imdb.com/title/tt16248660/" }]
 featured: false
-banner: "https://reillyfeatherstone.com/wp-content/uploads/2025/06/Jangle-How-do-you-know-169.jpg" # Temporary image
+banner: "https://static.reillyfeatherstone.com/Jangle%20-%20Banner.jpg"
 gallery: [
     {
-      url: "https://reillyfeatherstone.com/wp-content/uploads/2025/06/Jangle-themed-169-1024x576.jpg", # Temporary image
+      url: "https://static.reillyfeatherstone.com/Jangle%201.jpg",
+      alt: "Alt 1",
+      # title: "title",
+      # label: "label",
+    },
+    {
+      url: "https://static.reillyfeatherstone.com/Jangle%202.jpg",
+      alt: "Alt 1",
+      # title: "title",
+      # label: "label",
+    },
+    {
+      url: "https://static.reillyfeatherstone.com/Jangle%203.jpg",
+      alt: "Alt 1",
+      # title: "title",
+      # label: "label",
+    },
+    {
+      url: "https://static.reillyfeatherstone.com/Jangle%204.jpg",
       alt: "Alt 1",
       # title: "title",
       # label: "label",

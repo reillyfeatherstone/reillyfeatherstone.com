@@ -28,8 +28,39 @@ cast:
 partners: []
 links: []
 featured: false
-banner: "https://reillyfeatherstone.com/wp-content/uploads/2025/06/90408388_3127980983899299_574780170255204352_o-1.jpg" # Temporary image
-gallery: []
+banner: "https://static.reillyfeatherstone.com/Rage-Banner.jpg"
+gallery: [
+    {
+      url: "https://static.reillyfeatherstone.com/Rage-1.jpg",
+      alt: "Alt 1",
+      # title: "title",
+      # label: "label",
+    },
+    {
+      url: "https://static.reillyfeatherstone.com/Rage-2.jpg",
+      alt: "Alt 1",
+      # title: "title",
+      # label: "label",
+    },
+    {
+      url: "https://static.reillyfeatherstone.com/Rage-3.jpg",
+      alt: "Alt 1",
+      # title: "title",
+      # label: "label",
+    },
+    {
+      url: "https://static.reillyfeatherstone.com/Rage-4.jpg",
+      alt: "Alt 1",
+      # title: "title",
+      # label: "label",
+    },
+    {
+      url: "https://static.reillyfeatherstone.com/Rage-5.jpg",
+      alt: "Alt 1",
+      # title: "title",
+      # label: "label",
+    },
+  ]
 order: 2
 ---
 

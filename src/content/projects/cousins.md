@@ -11,28 +11,28 @@ cast: ["Zoë Scott", "Reilly Featherstone"]
 partners: []
 featured: true
 links: []
-banner: "https://reillyfeatherstone.com/wp-content/uploads/2026/03/Thumbnail_1.4.3-1024x576.jpg" # Temporary image
+banner: "https://static.reillyfeatherstone.com/Cousins-Banner.jpg"
 gallery: [
     {
-      url: "https://reillyfeatherstone.com/wp-content/uploads/2026/03/Thumbnail_1.4.2-768x432.jpg", # Temporary image
+      url: "https://static.reillyfeatherstone.com/Cousins-1.jpg",
       alt: "Alt 1",
       # title: "title",
       # label: "label",
     },
     {
-      url: "https://reillyfeatherstone.com/wp-content/uploads/2026/03/Still-2025-09-02-212720_1.4.3-768x432.jpg", # Temporary image
+      url: "https://static.reillyfeatherstone.com/Cousins-2.jpg",
       alt: "Alt 1",
       # title: "title",
       # label: "label",
     },
     {
-      url: "https://reillyfeatherstone.com/wp-content/uploads/2026/03/Screenshot-2026-03-03-220712-768x432.png", # Temporary image
+      url: "https://static.reillyfeatherstone.com/Cousins-3.png",
       alt: "Alt 1",
       # title: "title",
       # label: "label",
     },
     {
-      url: "https://reillyfeatherstone.com/wp-content/uploads/2026/03/Still-2025-09-02-212850_1.4.5-768x432.jpg", # Temporary image
+      url: "https://static.reillyfeatherstone.com/Cousins-4.jpg",
       alt: "Alt 1",
       # title: "title",
       # label: "label",

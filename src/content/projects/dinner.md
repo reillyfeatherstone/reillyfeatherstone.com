@@ -19,28 +19,28 @@ cast:
 partners: []
 links: []
 featured: true
-banner: "https://reillyfeatherstone.com/wp-content/uploads/2025/06/92401_211321087_171e0.jpg" # Temporary image
+banner: "https://static.reillyfeatherstone.com/Dinner%20Banner.png"
 gallery: [
     {
-      url: "https://reillyfeatherstone.com/wp-content/uploads/2025/06/92519_211590953_17256-768x549.jpg", # Temporary image
+      url: "https://static.reillyfeatherstone.com/Dinner-1.jpg",
       alt: "Alt 1",
       # title: "title",
       # label: "label",
     },
     {
-      url: "https://reillyfeatherstone.com/wp-content/uploads/2025/06/92447_211426289_1720e-768x549.jpg", # Temporary image
+      url: "https://static.reillyfeatherstone.com/Dinner-2.jpg",
       alt: "Alt 1",
       # title: "title",
       # label: "label",
     },
     {
-      url: "https://reillyfeatherstone.com/wp-content/uploads/2025/06/92522_211597814_17259-768x549.jpg", # Temporary image
+      url: "https://static.reillyfeatherstone.com/Dinner-3.jpg",
       alt: "Alt 1",
       # title: "title",
       # label: "label",
     },
     {
-      url: "https://reillyfeatherstone.com/wp-content/uploads/2025/06/92472_211483464_17227-768x549.jpg", # Temporary image
+      url: "https://static.reillyfeatherstone.com/Dinner-4.jpg",
       alt: "Alt 1",
       # title: "title",
       # label: "label",

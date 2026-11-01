@@ -23,7 +23,8 @@ cast:
   ]
 partners: []
 links: [{ label: "IMDb", url: "https://www.imdb.com/title/tt12665070/" }]
-banner: "https://reillyfeatherstone.com/wp-content/uploads/2025/06/Screenshot6.png" # Temporary image
+featured: false
+banner: "https://static.reillyfeatherstone.com/Closure-banner.png"
 gallery: []
 order: 1
 ---

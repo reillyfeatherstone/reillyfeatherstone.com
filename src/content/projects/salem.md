@@ -22,40 +22,76 @@ cast:
 partners: ["Sherman Theatre"]
 links: []
 featured: true
-banner: "https://reillyfeatherstone.com/wp-content/uploads/2025/06/Focus-9-scaled-e1749234666985-1024x543.jpg" # Temporary image
+banner: "https://static.reillyfeatherstone.com/Salem-Banner.jpg"
 gallery: [
     {
-      url: "https://reillyfeatherstone.com/wp-content/uploads/2025/06/Focus-2-768x549.jpg", # Temporary image
+      url: "https://static.reillyfeatherstone.com/Salem-1.jpg",
       alt: "Alt 1",
       # title: "title",
       # label: "label",
     },
     {
-      url: "https://reillyfeatherstone.com/wp-content/uploads/2025/06/Group-3-768x549.jpg", # Temporary image
+      url: "https://static.reillyfeatherstone.com/Salem-2.jpg",
       alt: "Alt 1",
       # title: "title",
       # label: "label",
     },
     {
-      url: "https://reillyfeatherstone.com/wp-content/uploads/2025/06/Focus-10-768x549.jpg", # Temporary image
+      url: "https://static.reillyfeatherstone.com/Salem-3.jpg",
       alt: "Alt 1",
       # title: "title",
       # label: "label",
     },
     {
-      url: "https://reillyfeatherstone.com/wp-content/uploads/2025/06/Focus-11-768x549.jpg", # Temporary image
+      url: "https://static.reillyfeatherstone.com/Salem-4.jpg",
       alt: "Alt 1",
       # title: "title",
       # label: "label",
     },
     {
-      url: "https://reillyfeatherstone.com/wp-content/uploads/2025/06/Group-5-768x549.jpg", # Temporary image
+      url: "https://static.reillyfeatherstone.com/Salem-5.jpg",
       alt: "Alt 1",
       # title: "title",
       # label: "label",
     },
     {
-      url: "https://reillyfeatherstone.com/wp-content/uploads/2025/06/Painting-2-768x549.jpg", # Temporary image
+      url: "https://static.reillyfeatherstone.com/Salem-6.jpg",
+      alt: "Alt 1",
+      # title: "title",
+      # label: "label",
+    },
+    {
+      url: "https://static.reillyfeatherstone.com/Salem-7.jpg",
+      alt: "Alt 1",
+      # title: "title",
+      # label: "label",
+    },
+    {
+      url: "https://static.reillyfeatherstone.com/Salem-8.jpg",
+      alt: "Alt 1",
+      # title: "title",
+      # label: "label",
+    },
+    {
+      url: "https://static.reillyfeatherstone.com/Salem-9.jpg",
+      alt: "Alt 1",
+      # title: "title",
+      # label: "label",
+    },
+    {
+      url: "https://static.reillyfeatherstone.com/Salem-10.jpg",
+      alt: "Alt 1",
+      # title: "title",
+      # label: "label",
+    },
+    {
+      url: "https://static.reillyfeatherstone.com/Salem-2.jpg",
+      alt: "Alt 1",
+      # title: "title",
+      # label: "label",
+    },
+    {
+      url: "https://static.reillyfeatherstone.com/Salem-Cast-2.jpg",
       alt: "Alt 1",
       # title: "title",
       # label: "label",
