@@ -5,15 +5,15 @@ import tailwindcss from "@tailwindcss/vite"
 
 import sitemap from "@astrojs/sitemap"
 
-import preact from "@astrojs/preact";
+import preact from "@astrojs/preact"
 
-import mdx from "@astrojs/mdx";
+import mdx from "@astrojs/mdx"
 
 // https://astro.build/config
 export default defineConfig({
   site: "https://reillyfeatherstone.com/",
   image: {
-    domains: ["static.reillyfeatherstone.com", "reillyfeatherstone.com"],
+    domains: ["static.reillyfeatherstone.com"],
     layout: "constrained",
   },
 
@@ -21,7 +21,11 @@ export default defineConfig({
     plugins: [tailwindcss()],
   },
 
-  integrations: [sitemap({
-    lastmod: new Date(),
-  }), preact(), mdx()],
+  integrations: [
+    sitemap({
+      lastmod: new Date(),
+    }),
+    preact(),
+    mdx(),
+  ],
 })
