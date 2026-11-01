@@ -85,7 +85,7 @@ gallery: [
       # label: "label",
     },
     {
-      url: "https://static.reillyfeatherstone.com/Salem-2.jpg",
+      url: "https://static.reillyfeatherstone.com/Salem-Cast.jpg",
       alt: "Alt 1",
       # title: "title",
       # label: "label",
