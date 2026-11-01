@@ -97,14 +97,15 @@ export const personSchema = {
   },
   sameAs: [
     "https://www.imdb.com/name/nm7475358/",
-    "https://www.spotlight.com/5090-7833-5965",
     "https://cy.wikipedia.org/wiki/Reilly_Featherstone",
     "https://www.rwcmd.ac.uk/student-profiles/reilly-featherstone",
+    "https://www.wikidata.org/wiki/Q101103863",
+    "https://www.nancyhudsonassociates.com/actors/reilly-featherstone",
+    "https://www.spotlight.com/5090-7833-5965",
     "https://www.instagram.com/reillyfeatherstone/",
     "https://www.facebook.com/reillyfeatherstone",
     "https://x.com/Reilly_Feathers",
     "https://workonfilm.com/about-us/reilly-featherstone",
-    "https://www.nancyhudsonassociates.com/actors/reilly-featherstone",
   ],
   gender: "https://schema.org/Male",
   hasCredential: [
